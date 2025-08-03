@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CinePlus | Películas Favoritas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, #000000, #4caf50);
+      padding: 30px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #fff;
+      text-shadow: 2px 2px #000;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      list-style: none;
+      margin-top: 15px;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 16px;
+      background: #4caf50;
+      border-radius: 6px;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      background: #388e3c;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #4caf50;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .galeria div {
+      background: #222;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease;
+    }
+
+    .galeria div:hover {
+      transform: scale(1.03);
+    }
+
+    .galeria picture,
+    .galeria img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .galeria h4 {
+      margin-top: 10px;
+      color: #ffeb3b;
+      font-size: 1.2rem;
+    }
+
+    .galeria p {
+      margin-top: 8px;
+      color: #ddd;
+      font-size: 0.95rem;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: #1e1e1e;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #ccc;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      background: #333;
+      color: white;
+      font-size: 1rem;
+    }
+
+    form button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: 1rem;
+    }
+
+    form button:hover {
+      background: #2e7d32;
+    }
+
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+
+      nav a {
+        font-size: 0.95rem;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        padding: 8px 12px;
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 20px 15px;
+      }
+
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+
+      .galeria h4 {
+        font-size: 1.1rem;
+      }
+
+      .galeria p {
+        font-size: 0.9rem;
+      }
+
+      form {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>CinePlus</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="paginadepeliculasindex.html" target="_blank">Sitio Web</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio">
+    <h2>Bienvenidos</h2>
+    <p style="text-align: center;">
+      Bienvenido a CinePlus, tu plataforma digital moderna e interactiva para descubrir películas encantadoras. Disfruta nuestra galería visual, envíanos tus comentarios y sumérgete en la magia del cine.
+    </p>
+  </section>
+
+  <section id="galeria">
+    <h2>Galería de Películas</h2>
+    <div class="galeria">
+      <div>
+        <picture>
+          <source srcset="img/mascotas-640.jpg" media="(max-width: 640px)">
+          <source srcset="img/mascotas-1024.jpg" media="(max-width: 1024px)">
+          <img src="mascotas.jpg" alt="Mascotas">
+        </picture>
+        <h4>Mascotas</h4>
+        <p>Una divertida aventura animada que muestra la vida secreta de las mascotas cuando sus dueños no están en casa.</p>
+      </div>
+      <div>
+        <picture>
+          <source srcset="img/babe-640.jpg" media="(max-width: 640px)">
+          <source srcset="img/babe-1024.jpg" media="(max-width: 1024px)">
+          <img src="babe.jpg" alt="Babe el cerdito valiente">
+        </picture>
+        <h4>Babe, el cerdito</h4>
+        <p>La historia inspiradora de un cerdito que aprende a ser un pastor y gana el respeto en la granja.</p>
+      </div>
+      <div>
+        <picture>
+          <source srcset="img/eso" media="(max-width: 640px)">
+          <source srcset="img/eso-1024.png" media="(max-width: 1024px)">
+          <img src="eso.png" alt="Eso">
+        </picture>
+        <h4>Eso</h4>
+        <p>Varios niños de una pequeña ciudad del estado de Maine se alían para combatir a una entidad diabólica que adopta la forma de un payaso.</p>
+      </div>
+      <div>
+        <picture>
+          <source srcset="img/paulie-640.jpg" media="(max-width: 640px)">
+          <source srcset="img/paulie-1024.jpg" media="(max-width: 1024px)">
+          <img src="paulie.jpg" alt="Paulie (película)">
+        </picture>
+        <h4>Paulie (película)</h4>
+        <p>Paulie, un loro muy especial, emprende un largo viaje con un único objetivo: encontrar a Maire, su dueña, de la que ha sido separado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <form id="formulario">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="correo" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CinePlus | Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById("formulario").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("¡Gracias por tu mensaje! Nos pondremos en contacto pronto.");
+      this.reset();
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CinePlus </title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #121212;
+      color: #fff;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      color: #15ff00;
+    }
+
+    nav {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 16px;
+      background-color: #09ff00;
+      border-radius: 5px;
+    }
+
+    .peliculas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .pelicula {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .pelicula:hover {
+      transform: scale(1.05);
+    }
+
+    .pelicula img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .pelicula h3 {
+      margin: 10px;
+      color: #ffb300;
+    }
+
+    .detalle {
+      display: none;
+      background-color: #292929;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #1f1f1f;
+      text-align: center;
+      padding: 15px;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      .pelicula img {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CinePlus </h1>
+    <p> sitio web de películas favoritas</p>
+  </header>
+
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Estrenos</a>
+    <a href="#">Populares</a>
+    <a href="#">Categorías</a>
+    <a href="#">Contacto</a>
+  </nav>
+
+  <main class="peliculas">
+    <div class="pelicula" onclick="mostrarDetalle(this)">
+      <img src="mishuellasacasa.jpg" alt="Película 1">
+      <h3>MIS HUELLAS A CASA</h3>
+      <div class="detalle">
+        <p>Una aventura emocionante sobre un perro que salva a su familia.</p>
+      </div>
+    </div>
+
+    <div class="pelicula" onclick="mostrarDetalle(this)">
+      <img src="ladamayelvagabundo.jpg" alt="Película 2">
+      <h3>LA DAMA Y EL VAGABUNDO</h3>
+      <div class="detalle">
+        <p>Explora los límites del universo con esta película de ciencia ficción.</p>
+      </div>
+    </div>
+
+    <div class="pelicula" onclick="mostrarDetalle(this)">
+      <img src="larazondeestarcontigo.jpg" alt="Película 3">
+      <h3>LA RAZON DE ESTAR CONTIGO</h3>
+      <div class="detalle">
+        <p>Una historia de un perrito fiel </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CinePlus </p>
+  </footer>
+  <script>
+    function mostrarDetalle(elemento) {
+      const detalle = elemento.querySelector('.detalle');
+      const todos = document.querySelectorAll('.detalle');
+      todos.forEach(d => {
+        if (d !== detalle) d.style.display = 'none';
+      });
+      detalle.style.display = detalle.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
